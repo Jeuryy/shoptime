@@ -8,7 +8,6 @@ const HomeBanner = () => {
   return (
     <div className='py-16 md:py-0 bg-shop-light-pink rounded-lg px-10 
     lg:px-24 flex items-center justify-between'>
-      Home Banner
       <div className='space-y-5'>
         <Title>Grab Up To 50% off on <br/> Selected Headphones</Title>
         <Link 
