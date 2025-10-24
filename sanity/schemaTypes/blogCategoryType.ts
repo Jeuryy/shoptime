@@ -3,7 +3,7 @@ import { Ruler } from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export const blogCategoryType = defineType({
-  name: 'blog-category',
+  name: 'blogcategory',
   title: 'Blog Category',
   type: 'document',
   icon: TagIcon,

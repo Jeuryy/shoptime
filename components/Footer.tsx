@@ -29,7 +29,7 @@ const Footer = () => {
                     <ul className='space-y-3 mt-4'>
                         {quickLinksData?.map((item) =>(
                         <li key={item?.title}>
-                            <Link href={item?.href} className='hover:text-shop-light-green hoverEffect font-medium'>
+                            <Link href={item?.href} className='hover:text-shop-light-green hoverEffect text-sm'>
                             {item?.title}
                             </Link>
                         </li>
@@ -40,7 +40,7 @@ const Footer = () => {
                     <ul className='space-y-3 mt-4'>
                         {categoriesData?.map((item) =>(
                         <li key={item?.title}>
-                            <Link href={`/category/${item?.href}`} className='hover:text-shop-light-green hoverEffect font-medium'>
+                            <Link href={`/category/${item?.href}`} className='hover:text-shop-light-green hoverEffect text-sm'>
                             {item?.title}
                             </Link>
                         </li>

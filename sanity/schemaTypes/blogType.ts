@@ -33,10 +33,9 @@ export const blogType = defineType({
     }),
     defineField({
       name: 'blogcategories',
-      title: "Blog Categories",
       type: 'array',
       of: [
-        defineArrayMember({type: "reference", to: {type: "blog-category"}})
+        defineArrayMember({type: "reference", to: {type: "blogcategory"}})
       ],
     }),
     defineField({
