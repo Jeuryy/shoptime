@@ -93,7 +93,7 @@
     }
   },
   {
-    "name": "blog-category",
+    "name": "blogcategory",
     "type": "document",
     "attributes": {
       "_id": {
@@ -106,7 +106,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "string",
-          "value": "blog-category"
+          "value": "blogcategory"
         }
       },
       "_createdAt": {
@@ -328,7 +328,7 @@
                 "optional": true
               }
             },
-            "dereferencesTo": "blog-category",
+            "dereferencesTo": "blogcategory",
             "rest": {
               "type": "object",
               "attributes": {

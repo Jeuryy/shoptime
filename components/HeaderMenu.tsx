@@ -8,7 +8,7 @@ import SearchBar from './SearchBar';
 const HeaderMenu = () => {
     const pathname = usePathname();
   return (
-    <div className="hidden md:inline-flex w-1/3 items-center gap-7 text-sm 
+    <div className="hidden md:inline-flex w-1/3 items-center justify-center gap-7 text-sm 
     capitalized font-semibold text-light-color">
       {headerData?.map((e) => (
         <Link key={e?.title} href={e.href}

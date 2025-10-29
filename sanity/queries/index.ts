@@ -1,10 +1,11 @@
+import { defineQuery } from "next-sanity";
 import { sanityFetch } from "../lib/live";
-import { BRANDS_QUERY, DEAL_PRODUCTS, LATEST_BLOG_QUERY } from "./query";
+import { BRAND_QUERY, BRANDS_QUERY, DEAL_PRODUCTS, LATEST_BLOG_QUERY, PRODUCT_BY_SLUG_QUERY } from "./query";
 
 const getCategories = async ( quantity?: number) => {
     try {
         const query  = quantity ?
-        `*[_type == 'category'] | order(name asc) [1...$quantity] {
+        `*[_type == 'category'] | order(name asc) [0...$quantity] {
         ...,
         "productCount": count(*[_type == "product" && references(^._id)])
         }` 
@@ -53,6 +54,37 @@ const getDealProducts = async () => {
     }
 }
 
+const getProductBySlug = async (slug: string) => {
+    try {
+        const product = await sanityFetch({
+            query: PRODUCT_BY_SLUG_QUERY,
+            params: {
+                slug,
+            },
+        });
+        return product?.data || null;
+    } catch (error) {
+        console.error("Error fetching product by ID: ", error);
+        return null;
+    }
+}
+
+const getBrand = async (slug: string) => {
+    try {
+        const product = await sanityFetch({
+            query: BRAND_QUERY,
+            params: {
+                slug,
+            },
+        });
+        return product?.data || null;
+    } catch (error) {
+        console.error("Error fetching product by ID:", error);
+        return null;
+    }
+};
+
 
 export {getCategories, getAllBrands, 
-    getLatestBlogs, getDealProducts};
+    getLatestBlogs, getDealProducts, 
+    getProductBySlug, getBrand};

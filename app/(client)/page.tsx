@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { getCategories } from "@/sanity/queries";
 
 const Home =  async ()=>{
-  const categories = await getCategories(7);
+  const categories = await getCategories(6);
   return  (
     <Container>
       <HomeBanner/>

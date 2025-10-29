@@ -1,5 +1,4 @@
 import {TagIcon} from '@sanity/icons'
-import { Ruler } from 'lucide-react'
 import {defineField, defineType} from 'sanity'
 
 export const brandType = defineType({

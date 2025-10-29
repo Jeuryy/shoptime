@@ -14,30 +14,32 @@ const ProductCard = ({product}: {product: Product}) => {
     <div className='text-sm border-[1px] border-dark-blue/20 rounded-md bg-white group'>
         <div className='relative group overflow-hidden bg-shop-light-bg'>
             {product?.images && (
-                <Image
-                src={urlFor(product?.images[0]).url()}
-                alt='Product Image'
-                loading='lazy'
-                width={700}
-                height={700}
-                className={`w-full h-64 object-contain overflow-hidden transition-transform 
-                    bg-shop-light-bg hoverEffect ${product?.stock !== 0 ? "group-hover:scale-105":
-                    "opacity:60"}`}
+                <Link href={`/product/${product?.slug?.current}`}>
+                    <Image
+                        src={urlFor(product?.images[0]).url()}
+                        alt='Product Image'
+                        loading='lazy'
+                        width={700}
+                        height={700}
+                        className={`w-full h-64 object-contain overflow-hidden transition-transform 
+                         bg-shop-light-bg hoverEffect ${product?.stock !== 0 ? "group-hover:scale-105":
+                        "opacity:60"}`}
                 />
+                </Link>
             )}
             <AddToWishlistButton product={product}/>
             {product?.status === "sale" && (
             <p className='absolute top-2 left-2 z-10 text-xs border border-dark-color/50 
             px-2 rounded-full group-hover:border-shop-light-green 
             group-hover:text-shop-light-green hoverEffect'>
-                Sale!
+                Sale
             </p>
             )}
             {product?.status === "new" && (
             <p className='absolute top-2 left-2 z-10 text-xs border border-dark-color/50 
             px-2 rounded-full group-hover:border-shop-light-green 
             group-hover:text-shop-light-green hoverEffect'>
-                New!
+                New
             </p>
             )}
             {product?.status === "hot" && (
