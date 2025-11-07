@@ -1,13 +1,13 @@
 import { Product } from '@/sanity.types';
 import { urlFor } from '@/sanity/lib/image';
-import { Flame, FlameIcon, StarIcon } from 'lucide-react';
+import { Flame, StarIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
-import AddToWishlistButton from './AddToWishlistButton';
 import { Title } from './ui/text';
 import PriceView from './PriceView';
 import AddToCartButton from './AddToCartButton';
+import ProductSideMenu from './ProductSideMenu';
 
 const ProductCard = ({product}: {product: Product}) => {
   return (
@@ -27,7 +27,7 @@ const ProductCard = ({product}: {product: Product}) => {
                 />
                 </Link>
             )}
-            <AddToWishlistButton product={product}/>
+            <ProductSideMenu product={product}/>
             {product?.status === "sale" && (
             <p className='absolute top-2 left-2 z-10 text-xs border border-dark-color/50 
             px-2 rounded-full group-hover:border-shop-light-green 

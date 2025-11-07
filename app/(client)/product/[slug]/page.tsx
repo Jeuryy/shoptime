@@ -7,6 +7,7 @@ import ProductCharacteristic from '@/components/ProductCharacteristic';
 import { getProductBySlug } from '@/sanity/queries';
 import { StarIcon } from '@sanity/icons';
 import { CornerDownLeft, Truck } from 'lucide-react';
+import { notFound } from 'next/navigation';
 import React from 'react'
 import { FaRegQuestionCircle} from "react-icons/fa";
 import { FiShare2} from "react-icons/fi";
@@ -21,7 +22,11 @@ const SingleProductPage = async ({
     params:Promise<{slug:string}>;
 }) => {
     const {slug} = await params;
-    const product = await getProductBySlug(slug);    
+    const product = await getProductBySlug(slug); 
+    
+if (!product) {
+    return notFound();
+}
   return (
     <Container className='flex flex-col md:flex-row gap-10 py-10'>
          {product?.images && (
