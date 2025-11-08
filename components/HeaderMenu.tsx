@@ -3,7 +3,6 @@ import React from 'react'
 import { headerData } from '@/constants/data';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import SearchBar from './SearchBar';
 
 const HeaderMenu = () => {
     const pathname = usePathname();

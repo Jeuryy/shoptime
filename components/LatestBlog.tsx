@@ -47,7 +47,7 @@ const LatestBlog = async () => {
                             </div>
                         </div>
                         <Link
-                            href={`/blog${blog?.slug?.current}`}
+                            href={`/blog/${blog?.slug?.current}`}
                             className='text-base font-semibold tracking-wide mt-5 line-clamp-2 hover:text-shop-dark-green hoverEffect'>    
                             {blog?.title}
                         </Link>
