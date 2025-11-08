@@ -19,7 +19,6 @@ import { urlFor } from '@/sanity/lib/image';
 import useStore from '@/store'
 import { useAuth, useUser } from '@clerk/nextjs';
 import {ShoppingBag, Trash } from 'lucide-react';
-import { metadata } from 'next-sanity/studio';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
@@ -33,7 +32,6 @@ const CartPage = () => {
     getSubTotalPrice,
     resetCart,
   } = useStore();
-  const [isClient, setIsClient] = useState(false);
   const [loading, setLoading] = useState(false);
   const groupedItems = useStore((state) => state.getGroupedItems());
   const {isSignedIn} = useAuth();

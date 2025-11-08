@@ -7,7 +7,7 @@ interface Props{
     className?: string;
 }
 
-const PriceView = ({price, discount, className}:Props) => {
+const PriceView = ({price, discount}:Props) => {
   return (
     <div className='flex items-center gap-2'>
         <PriceFormatter amount={price}
